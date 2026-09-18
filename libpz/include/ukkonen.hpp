@@ -19,7 +19,7 @@ public:
 
     bool edit_within_k(const std::string& s,
                        const std::string& t,
-                       int k);
+                       unsigned int k);
     
     /**
      * Finds every non-empty substring of text whose edit distance 
@@ -42,7 +42,7 @@ public:
     std::vector<std::pair<int, int>> locate(
         const std::string &pattern,
         const std::string &text,
-        int k);
+        unsigned int k);
     
     /** 
      * Counts every non-empty substring whose edit distance from pattern is at most k.
@@ -55,7 +55,7 @@ public:
     
     int count(const std::string &pattern,
               const std::string &text,
-              int k);
+              unsigned int k);
     
 };
 

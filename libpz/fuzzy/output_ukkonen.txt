@@ -1,0 +1,381 @@
+========================================
+Ukkonen Fuzzy Search - Small Tests
+========================================
+
+[PASS] Exact match
+Pattern: abc
+Text length: 3
+k: 0
+Expected count: 1
+Actual count:   1
+Expected locations: {0, 2}
+Actual locations:   {0, 2}
+Execution time: 7 us
+
+[PASS] Overlapping exact matches
+Pattern: aa
+Text length: 4
+k: 0
+Expected count: 3
+Actual count:   3
+Expected locations: {0, 1} {1, 2} {2, 3}
+Actual locations:   {0, 1} {1, 2} {2, 3}
+Execution time: 4 us
+
+[PASS] Single substitution
+Pattern: abc
+Text length: 3
+k: 1
+Expected count: 1
+Actual count:   1
+Expected locations: {0, 2}
+Actual locations:   {0, 2}
+Execution time: 4 us
+
+[PASS] Insertion and different substring lengths
+Pattern: abc
+Text length: 4
+k: 1
+Expected count: 3
+Actual count:   3
+Expected locations: {0, 1} {0, 2} {0, 3}
+Actual locations:   {0, 1} {0, 2} {0, 3}
+Execution time: 6 us
+
+[PASS] Single deletion
+Pattern: abc
+Text length: 2
+k: 1
+Expected count: 1
+Actual count:   1
+Expected locations: {0, 1}
+Actual locations:   {0, 1}
+Execution time: 2 us
+
+[PASS] Multiple fuzzy substrings with same start
+Pattern: ab
+Text length: 2
+k: 1
+Expected count: 3
+Actual count:   3
+Expected locations: {0, 0} {0, 1} {1, 1}
+Actual locations:   {0, 0} {0, 1} {1, 1}
+Execution time: 4 us
+
+[PASS] No match
+Pattern: abc
+Text length: 3
+k: 0
+Expected count: 0
+Actual count:   0
+Expected locations:
+Actual locations:
+Execution time: 1 us
+
+[PASS] Exact match in middle
+Pattern: abc
+Text length: 7
+k: 0
+Expected count: 1
+Actual count:   1
+Expected locations: {2, 4}
+Actual locations:   {2, 4}
+Execution time: 5 us
+
+[PASS] Repeated exact matches
+Pattern: a
+Text length: 6
+k: 0
+Expected count: 3
+Actual count:   3
+Expected locations: {1, 1} {3, 3} {5, 5}
+Actual locations:   {1, 1} {3, 3} {5, 5}
+Execution time: 6 us
+
+[PASS] Many fuzzy matches
+Pattern: a
+Text length: 6
+k: 1
+Expected count: 11
+Actual count:   11
+Expected locations: {0, 0} {0, 1} {1, 1} {1, 2} {2, 2} {2, 3} {3, 3} {3, 4} {4, 4} {4, 5} {5, 5}
+Actual locations:   {0, 0} {0, 1} {1, 1} {1, 2} {2, 2} {2, 3} {3, 3} {3, 4} {4, 4} {4, 5} {5, 5}
+Execution time: 8 us
+
+[PASS] Single-character substitution
+Pattern: a
+Text length: 1
+k: 1
+Expected count: 1
+Actual count:   1
+Expected locations: {0, 0}
+Actual locations:   {0, 0}
+Execution time: 1 us
+
+[PASS] Maximum deletion boundary
+Pattern: abcd
+Text length: 2
+k: 2
+Expected count: 1
+Actual count:   1
+Expected locations: {0, 1}
+Actual locations:   {0, 1}
+Execution time: 2 us
+
+[PASS] Beyond deletion boundary
+Pattern: abcd
+Text length: 2
+k: 1
+Expected count: 0
+Actual count:   0
+Expected locations:
+Actual locations:
+Execution time: 0 us
+
+[PASS] k greater than pattern length
+Pattern: abc
+Text length: 3
+k: 3
+Expected count: 6
+Actual count:   6
+Expected locations: {0, 0} {0, 1} {0, 2} {1, 1} {1, 2} {2, 2}
+Actual locations:   {0, 0} {0, 1} {0, 2} {1, 1} {1, 2} {2, 2}
+Execution time: 7 us
+
+[PASS] Many overlapping fuzzy matches
+Pattern: aaaa
+Text length: 8
+k: 1
+Expected count: 15
+Actual count:   15
+Expected locations: {0, 2} {0, 3} {0, 4} {1, 3} {1, 4} {1, 5} {2, 4} {2, 5} {2, 6} {3, 5} {3, 6} {3, 7} {4, 6} {4, 7} {5, 7}
+Actual locations:   {0, 2} {0, 3} {0, 4} {1, 3} {1, 4} {1, 5} {2, 4} {2, 5} {2, 6} {3, 5} {3, 6} {3, 7} {4, 6} {4, 7} {5, 7}
+Execution time: 14 us
+
+[PASS] Match near beginning with offset
+Pattern: abcdef
+Text length: 7
+k: 2
+Expected count: 4
+Actual count:   4
+Expected locations: {1, 6} {2, 5} {2, 6} {3, 6}
+Actual locations:   {1, 6} {2, 5} {2, 6} {3, 6}
+Execution time: 13 us
+
+[PASS] Match near end with length variation
+Pattern: abcdef
+Text length: 7
+k: 2
+Expected count: 8
+Actual count:   8
+Expected locations: {0, 3} {0, 4} {0, 5} {0, 6} {1, 4} {1, 5} {1, 6} {2, 5}
+Actual locations:   {0, 3} {0, 4} {0, 5} {0, 6} {1, 4} {1, 5} {1, 6} {2, 5}
+Execution time: 14 us
+
+[PASS] Repeated-character boundary case
+Pattern: aaaaab
+Text length: 6
+k: 1
+Expected count: 3
+Actual count:   3
+Expected locations: {0, 4} {0, 5} {1, 5}
+Actual locations:   {0, 4} {0, 5} {1, 5}
+Execution time: 6 us
+
+[PASS] Internal substitution
+Pattern: abcde
+Text length: 5
+k: 1
+Expected count: 1
+Actual count:   1
+Expected locations: {0, 4}
+Actual locations:   {0, 4}
+Execution time: 5 us
+
+[PASS] anb in banana
+Pattern: anb
+Text length: 6
+k: 1
+Expected count: 4
+Actual count:   4
+Expected locations: {1, 2} {1, 3} {3, 4} {3, 5}
+Actual locations:   {1, 2} {1, 3} {3, 4} {3, 5}
+Execution time: 11 us
+
+========================================
+Small Test Summary
+========================================
+Passed: 20
+Failed: 0
+Total:  20
+
+========================================
+Running Large Tests
+========================================
+
+[PASS] Test 21
+Text length: 10000
+Pattern length: 10
+k: 0
+Expected count: 9991
+Actual count:   9991
+Execution time: 10 ms
+
+[PASS] Test 22
+Text length: 10000
+Pattern length: 10
+k: 0
+Expected count: 4996
+Actual count:   4996
+Execution time: 9 ms
+
+[PASS] Test 23
+Text length: 10000
+Pattern length: 6
+k: 0
+Expected count: 3332
+Actual count:   3332
+Execution time: 7 ms
+
+[PASS] Test 24
+Text length: 25000
+Pattern length: 10
+k: 1
+Expected count: 74973
+Actual count:   74973
+Execution time: 58 ms
+
+[PASS] Test 25
+Text length: 25000
+Pattern length: 20
+k: 0
+Expected count: 0
+Actual count:   0
+Execution time: 42 ms
+
+[PASS] Test 26
+Text length: 25000
+Pattern length: 16
+k: 0
+Expected count: 1
+Actual count:   1
+Execution time: 34 ms
+
+[PASS] Test 27
+Text length: 50000
+Pattern length: 8
+k: 0
+Expected count: 12499
+Actual count:   12499
+Execution time: 43 ms
+
+[PASS] Test 28
+Text length: 50000
+Pattern length: 10
+k: 1
+Expected count: 69248
+Actual count:   69248
+Execution time: 111 ms
+
+[PASS] Test 29
+Text length: 50000
+Pattern length: 20
+k: 0
+Expected count: 0
+Actual count:   0
+Execution time: 141 ms
+
+[PASS] Test 30
+Text length: 100000
+Pattern length: 20
+k: 0
+Expected count: 99981
+Actual count:   99981
+Execution time: 293 ms
+
+[PASS] Test 31
+Text length: 100000
+Pattern length: 12
+k: 0
+Expected count: 33330
+Actual count:   33330
+Execution time: 129 ms
+
+[PASS] Test 32
+Text length: 100000
+Pattern length: 20
+k: 0
+Expected count: 0
+Actual count:   0
+Execution time: 181 ms
+
+[PASS] Test 33
+Text length: 100000
+Pattern length: 10
+k: 0
+Expected count: 99981
+Actual count:   99981
+Execution time: 110 ms
+
+[PASS] Test 34
+Text length: 100000
+Pattern length: 12
+k: 1
+Expected count: 249973
+Actual count:   249973
+Execution time: 392 ms
+
+[PASS] Test 35
+Text length: 100000
+Pattern length: 12
+k: 0
+Expected count: 3846
+Actual count:   3846
+Execution time: 252 ms
+
+[PASS] Test 36
+Text length: 100000
+Pattern length: 10
+k: 0
+Expected count: 10000
+Actual count:   10000
+Execution time: 226 ms
+
+[PASS] Test 37
+Text length: 100000
+Pattern length: 16
+k: 1
+Expected count: 145898
+Actual count:   145898
+Execution time: 607 ms
+
+[PASS] Test 38
+Text length: 100000
+Pattern length: 18
+k: 1
+Expected count: 0
+Actual count:   0
+Execution time: 315 ms
+
+[PASS] Test 39
+Text length: 100000
+Pattern length: 13
+k: 0
+Expected count: 1
+Actual count:   1
+Execution time: 122 ms
+
+[PASS] Test 40
+Text length: 100000
+Pattern length: 50
+k: 2
+Expected count: 0
+Actual count:   0
+Execution time: 1107 ms
+
+========================================
+Large Test Summary
+========================================
+Passed: 20
+Failed: 0
+Total:  20
