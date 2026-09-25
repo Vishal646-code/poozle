@@ -1,0 +1,246 @@
+========================================
+RapidFuzz Reference Benchmark
+========================================
+Runs per test: 5
+Reported timing: median
+Correctness reference: rapidfuzz.distance.Levenshtein
+
+----------------------------------------
+Test 1: Tama of the Light Country
+----------------------------------------
+File: large_1.txt
+Pattern: Tama of the Light Country
+k: 0
+Text size: 191530 bytes
+RapidFuzz count: 1
+Result consistency: PASS
+
+Timing:
+  Run 1: 0.334750 s
+  Run 2: 0.178406 s
+  Run 3: 0.158472 s
+  Run 4: 0.162279 s
+  Run 5: 0.169278 s
+  Median: 0.169278 s
+
+----------------------------------------
+Test 2: Tama of the Light Countr
+----------------------------------------
+File: large_1.txt
+Pattern: Tama of the Light Countr
+k: 1
+Text size: 191530 bytes
+RapidFuzz count: 5
+Result consistency: PASS
+
+Timing:
+  Run 1: 0.659767 s
+  Run 2: 0.555076 s
+  Run 3: 1.029213 s
+  Run 4: 0.645953 s
+  Run 5: 0.474193 s
+  Median: 0.645953 s
+
+----------------------------------------
+Test 3: Tama
+----------------------------------------
+File: large_1.txt
+Pattern: Tama
+k: 0
+Text size: 191530 bytes
+RapidFuzz count: 93
+Result consistency: PASS
+
+Timing:
+  Run 1: 0.271331 s
+  Run 2: 0.280656 s
+  Run 3: 0.269657 s
+  Run 4: 0.270124 s
+  Run 5: 0.265952 s
+  Median: 0.270124 s
+
+----------------------------------------
+Test 4: Light Country
+----------------------------------------
+File: large_1.txt
+Pattern: Light Country
+k: 0
+Text size: 191530 bytes
+RapidFuzz count: 22
+Result consistency: PASS
+
+Timing:
+  Run 1: 0.305209 s
+  Run 2: 0.273401 s
+  Run 3: 0.254514 s
+  Run 4: 0.271145 s
+  Run 5: 0.316970 s
+  Median: 0.273401 s
+
+----------------------------------------
+Test 5: Alice
+----------------------------------------
+File: large_2.txt
+Pattern: Alice
+k: 0
+Text size: 151191 bytes
+RapidFuzz count: 399
+Result consistency: PASS
+
+Timing:
+  Run 1: 0.196099 s
+  Run 2: 0.221748 s
+  Run 3: 0.241964 s
+  Run 4: 0.316220 s
+  Run 5: 0.364366 s
+  Median: 0.241964 s
+
+----------------------------------------
+Test 6: Alic
+----------------------------------------
+File: large_2.txt
+Pattern: Alic
+k: 1
+Text size: 151191 bytes
+RapidFuzz count: 1999
+Result consistency: PASS
+
+Timing:
+  Run 1: 0.859615 s
+  Run 2: 0.724240 s
+  Run 3: 0.673965 s
+  Run 4: 0.612192 s
+  Run 5: 0.641105 s
+  Median: 0.673965 s
+
+----------------------------------------
+Test 7: Wonderland
+----------------------------------------
+File: large_2.txt
+Pattern: Wonderland
+k: 0
+Text size: 151191 bytes
+RapidFuzz count: 3
+Result consistency: PASS
+
+Timing:
+  Run 1: 0.278711 s
+  Run 2: 0.280079 s
+  Run 3: 0.281807 s
+  Run 4: 0.284339 s
+  Run 5: 0.307502 s
+  Median: 0.281807 s
+
+----------------------------------------
+Test 8: Wonderlan
+----------------------------------------
+File: large_2.txt
+Pattern: Wonderlan
+k: 1
+Text size: 151191 bytes
+RapidFuzz count: 15
+Result consistency: PASS
+
+Timing:
+  Run 1: 0.818380 s
+  Run 2: 0.524180 s
+  Run 3: 0.545126 s
+  Run 4: 0.554598 s
+  Run 5: 0.445251 s
+  Median: 0.545126 s
+
+----------------------------------------
+Test 9: Sherlock Holmes
+----------------------------------------
+File: large_3.txt
+Pattern: Sherlock Holmes
+k: 0
+Text size: 595198 bytes
+RapidFuzz count: 91
+Result consistency: PASS
+
+Timing:
+  Run 1: 0.812500 s
+  Run 2: 0.822150 s
+  Run 3: 1.308909 s
+  Run 4: 0.971836 s
+  Run 5: 0.946805 s
+  Median: 0.946805 s
+
+----------------------------------------
+Test 10: Sherlock
+----------------------------------------
+File: large_3.txt
+Pattern: Sherlock
+k: 0
+Text size: 595198 bytes
+RapidFuzz count: 97
+Result consistency: PASS
+
+Timing:
+  Run 1: 0.850015 s
+  Run 2: 0.805162 s
+  Run 3: 0.751445 s
+  Run 4: 0.706200 s
+  Run 5: 0.486183 s
+  Median: 0.751445 s
+
+----------------------------------------
+Test 11: Holmes
+----------------------------------------
+File: large_3.txt
+Pattern: Holmes
+k: 0
+Text size: 595198 bytes
+RapidFuzz count: 461
+Result consistency: PASS
+
+Timing:
+  Run 1: 0.523419 s
+  Run 2: 0.946735 s
+  Run 3: 1.085147 s
+  Run 4: 0.609801 s
+  Run 5: 0.422850 s
+  Median: 0.609801 s
+
+----------------------------------------
+Test 12: Sherloc
+----------------------------------------
+File: large_3.txt
+Pattern: Sherloc
+k: 1
+Text size: 595198 bytes
+RapidFuzz count: 485
+Result consistency: PASS
+
+Timing:
+  Run 1: 1.125309 s
+  Run 2: 1.912342 s
+  Run 3: 1.822932 s
+  Run 4: 1.149870 s
+  Run 5: 1.069964 s
+  Median: 1.149870 s
+
+========================================
+RapidFuzz Test Summary
+========================================
+Tests completed: 12
+Runs per test: 5
+All results consistent: YES
+
+========================================
+RapidFuzz Reference Data
+========================================
+Test	File	Pattern	k	Count
+1	large_1.txt	Tama of the Light Country	0	1
+2	large_1.txt	Tama of the Light Countr	1	5
+3	large_1.txt	Tama	0	93
+4	large_1.txt	Light Country	0	22
+5	large_2.txt	Alice	0	399
+6	large_2.txt	Alic	1	1999
+7	large_2.txt	Wonderland	0	3
+8	large_2.txt	Wonderlan	1	15
+9	large_3.txt	Sherlock Holmes	0	91
+10	large_3.txt	Sherlock	0	97
+11	large_3.txt	Holmes	0	461
+12	large_3.txt	Sherloc	1	485
